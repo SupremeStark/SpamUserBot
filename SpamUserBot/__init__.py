@@ -53,19 +53,59 @@ UB  = Client(
 
 async def SpamUserBot():
     global UB
-    os.system("clear")
+    global UB2    
     header = Table(show_header=True, header_style="bold yellow")
     header.add_column(LOG_MSG)
     LOG.print(header)
-    LOG.print("[bold yellow]ɢᴇᴛᴛɪɴɢ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ.....")
-    
-    await asyncio.sleep(2)
-    LOG.print("[bold yellow]ɢᴏᴛ ᴀʟʟ ᴛʜᴇ ɪɴғᴏ......")
-    await asyncio.sleep(1)
+    LOG.print(f"[bold green]{EMOJI}")
+    if SESSION:
+        try:
+            UB = Client("SESSION",api_id = API_ID,api_hash = API_HASH, session_string = SESSION)
+            LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 𝟷")
+            await UB.start()
+            ub = await UB.get_me()
+            await UB.join_chat("Steve_Projects")
+            await UB.join_chat("Testing_support_group")
+            SUDO_USERS.append(ub.id)
+            LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 𝟷 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+        except Exception as idk:
+            LOG.print(f"[bold red]{idk}")
+    else:
+        LOG.print("[bold red]sᴇssɪᴏɴ𝟷 ɴᴏᴛ ғᴏᴜɴᴅ")
+        UB = Client("steve",api_id = API_ID , api_hash = API_HASH)
+        try:
+            UB.start()
+        except:
+            pass
+      
+    if SESSION2:
+        try:
+            UB2 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 2")
+            await UB2.start()
+            ub2 = await UB2.get_me()
+            await UB2.join_chat("Steve_Projects")
+            await UB2.join_chat("Testing_support_group")
+            SUDO_USERS.append(ub2.id)
+            LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 2 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+        except Exception as idk:
+            LOG.print(f"[bold red]{idk}")
+    else:
+        LOG.print("[bold red]sᴇssɪᴏɴ𝟷 ɴᴏᴛ ғᴏᴜɴᴅ")
+        UB2 = Client("steve",api_id = API_ID , api_hash = API_HASH)
+        try:
+            UB2.start()
+        except:
+            pass    
+
+
+ #   await asyncio.sleep(2)
+ #   LOG.print("[bold yellow]ɢᴏᴛ ᴀʟʟ ᴛʜᴇ ɪɴғᴏ......")
+#    await asyncio.sleep(1)
     
 
 loop = asyncio.get_event_loop()
-#loop.run_until_complete(SpamUserBot())    
+loop.run_until_complete(SpamUserBot())    
 
 
 
