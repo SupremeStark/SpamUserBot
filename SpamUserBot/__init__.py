@@ -5,7 +5,7 @@ from config import Config
 from pyrogram import Client
 from rich.console import Console
 from rich.table import Table
-from MassActionBot.utils.data import LOG_MSG as START_TEXT
+#from MassActionBot.utils.data import LOG_MSG as START_TEXT
 
 #getting variables
 API_ID = Config.API_ID
