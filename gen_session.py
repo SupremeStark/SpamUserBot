@@ -20,7 +20,7 @@ HII = """
 
 LOG.print(f"[bold cyan]{HII}")
 
-APP_ID = int(input("\nEnter APP ID here: "))
+API_ID = int(input("\nEnter APP ID here: "))
 API_HASH = input("\nEnter API HASH here: ")
 
 
