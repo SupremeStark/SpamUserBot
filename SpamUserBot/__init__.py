@@ -11,7 +11,7 @@ from rich.table import Table
 API_ID = Config.API_ID
 API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
-SUDO_USERS = Config.BAN_PROTECTED
+SUDO_USERS = Config.SUDO_USERS
 SESSION = Config.SESSION
 
 #rich
