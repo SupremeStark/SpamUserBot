@@ -32,4 +32,4 @@ try :
         LOG.print("[bold yellow]ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇ.")
 
 except Exception as er:
-    LOG.print("[bold red]{er}")
+    LOG.print(f"[bold red]{er}")
