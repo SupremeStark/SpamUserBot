@@ -13,6 +13,7 @@ API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
 SUDO_USERS = Config.SUDO_USERS
 SESSION = Config.SESSION
+SESSION2 = Config.SESSION2
 
 #rich
 LOG = Console()
@@ -41,17 +42,9 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 
-#client
-UB  = Client(
-    "SupremeStark",
-    api_id = API_ID,
-    api_hash = API_HASH,
-    session_string = SESSION )
-    
-
-
 
 async def SpamUserBot():
+    global BOT
     global UB
     global UB2    
     header = Table(show_header=True, header_style="bold yellow")
@@ -98,11 +91,10 @@ async def SpamUserBot():
         except:
             pass    
 
+    BOT = Client("BotHun",API_ID,API_HASH,bot_token=TOKEN)
+    await BOT.start()
+    LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
 
- #   await asyncio.sleep(2)
- #   LOG.print("[bold yellow]ɢᴏᴛ ᴀʟʟ ᴛʜᴇ ɪɴғᴏ......")
-#    await asyncio.sleep(1)
-    
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(SpamUserBot())    
