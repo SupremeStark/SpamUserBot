@@ -2,6 +2,8 @@ import os
 from pyrogram import Client
 from SpamUserBot import LOG
 
+os.system("clear")
+
 LOG.print("[bold cyan]☮▁▂▃▄☾ ♛ Text ♛ ☽▄▃▂▁☮")
 
 HII = """
