@@ -55,7 +55,7 @@ async def SpamUserBot():
     global UB
     os.system("clear")
     header = Table(show_header=True, header_style="bold yellow")
-    header.add_column(LOG_MSG)
+    header.add_column("ntg")
     LOG.print(header)
     LOG.print("[bold yellow]ɢᴇᴛᴛɪɴɢ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ.....")
     
