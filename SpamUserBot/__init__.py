@@ -65,7 +65,7 @@ async def SpamUserBot():
     
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(SpamUserBot())    
+#loop.run_until_complete(SpamUserBot())    
 
 
 
