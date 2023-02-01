@@ -30,7 +30,10 @@ async def _spam(client, message):
         photo = replied.photo.file_id
         num = int(text[0])
         for i in range(num):
-            await client.send_photo(message.chat.id,photo=photo, caption= (caption if replied.caption else None))   
+            try:
+                await client.send_photo(message.chat.id,photo=photo, caption= (caption if replied.photo.caption else None)) 
+            except FloodWait as m:
+                await asyncio.sleep(m.value)  
              
         
         
