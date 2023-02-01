@@ -15,7 +15,7 @@ async def start_bot():
     LOG.print("[bold red]ᴄᴀɴᴄᴇʟɪɴɢ ᴀʟʟ ᴛᴀsᴋs.")
 
 
-@Client.on_message(filters.command(["start"], ".") & (filters.me | filters.user(SUDO_USERS)))
+@Client.on_message(filters.command("start", prefixes = ["."]) & (filters.me | filters.user(SUDO_USERS)))
 async def _start(_, message):
     await message.reply_text("ok working")
 
