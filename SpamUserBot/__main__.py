@@ -5,7 +5,7 @@ from pyrogram import idle , filters , Client
 from SpamUserBot import LOG ,SUDO_USERS  , UB, UB2
 from SpamUserBot.modules import ALL_MODULES
 from pyrogram.handlers import MessageHandler
-
+from SpamUserBot.steve.funcs import custom_handler
 
 loop = asyncio.get_event_loop()
 
