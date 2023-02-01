@@ -14,7 +14,9 @@ async def start_bot():
     await idle() 
     LOG.print("[bold red]ᴄᴀɴᴄᴇʟɪɴɢ ᴀʟʟ ᴛᴀsᴋs.")
 
-@UB.on_message(filters.command("start") & filters.user(SUDO_USERS))
+
+@UB.on_message(filters.command("start",prefixes = ["."]) & filters.user(SUDO_USERS))
+@UB.on_message(filters.command("start", prefixes = ["."]) & filters.user(SUDO_USERS))
 async def start(_, message):
     await message.reply_text("ok working")
 
