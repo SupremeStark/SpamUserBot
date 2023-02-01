@@ -1,8 +1,8 @@
 import asyncio
 import importlib
 
-from pyrogram import idle
-from SpamUserBot import LOG
+from pyrogram import idle , filters 
+from SpamUserBot import LOG , UB , UB2 , SUDO_USERS
 from SpamUserBot.modules import ALL_MODULES
 
 loop = asyncio.get_event_loop()
@@ -14,7 +14,9 @@ async def start_bot():
     await idle() 
     LOG.print("[bold red]ᴄᴀɴᴄᴇʟɪɴɢ ᴀʟʟ ᴛᴀsᴋs.")
 
-
+@UB.on_message(filters.command("start") & filters.user(SUDO_USERS))
+async def start(_, message):
+    await message.reply_text("ok working")
 
 if __name__ == "__main__":
     loop.run_until_complete(start_bot())
