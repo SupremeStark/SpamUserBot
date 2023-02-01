@@ -23,7 +23,7 @@ async def start_bot():
 async def _start(client, message):
     me = (await client.get_me()).mention
     await message.delete()
-    msg = await msg.reply("⚡")
+    msg = await message.reply("⚡")
     await asyncio.sleep(1.5)
     await msg.delete()
     await message.reply_photo(
