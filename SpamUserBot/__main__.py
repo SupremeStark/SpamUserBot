@@ -2,7 +2,7 @@ import asyncio
 import importlib
 
 from pyrogram import idle , filters , Client 
-from SpamUserBot import LOG , UB , UB2 , SUDO_USERS
+from SpamUserBot import LOG ,SUDO_USERS
 from SpamUserBot.modules import ALL_MODULES
 
 loop = asyncio.get_event_loop()
