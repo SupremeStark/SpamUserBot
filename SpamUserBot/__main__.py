@@ -6,6 +6,8 @@ from SpamUserBot import LOG ,SUDO_USERS  , UB, UB2
 from SpamUserBot.modules import ALL_MODULES
 from pyrogram.handlers import MessageHandler
 from SpamUserBot.steve.funcs import custom_handler
+from SpamUserBot.steve.strings import START_TEXT
+
 
 loop = asyncio.get_event_loop()
 
@@ -18,8 +20,14 @@ async def start_bot():
 
 
 
-async def _start(_, message):
-    await message.reply_text("ok working")
+async def _start(client, message):
+    await message.delete()
+    msg = await msg.reply("⚡")
+    await asyncio.sleep(1.5)
+    await msg.delete()
+    await message.reply_photo(
+        photo = "https://graph.org/file/3e390f9f1e3c71ee5b394.jpg",
+        caption = START_TEXT)
 
 
 custom_handler("start",_start)
