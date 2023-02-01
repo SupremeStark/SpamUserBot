@@ -4,16 +4,15 @@ from SpamUserBot import get_readable_time, StartTime
 
 
 async def _ping(client, message):
-    await message.delete()
     start = time.time()
-    msg = await message.reply("ᴘᴏɴɢ!!!")
+    msg = await message.edit("`ᴘᴏɴɢ!!!`")
     end = time.time()
     telegram_ping = str(round((end - start) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
     await msg.edit(f"""
 𝗣𝗢𝗡𝗚 🥀!!
-**ᴛɪᴍᴇ ᴛᴀᴋᴇɴ:** {telegram_ping}
-**sᴇʀᴠɪᴄᴇ ᴜᴘᴛɪᴍᴇ:** {uptime}
+**ᴛɪᴍᴇ ᴛᴀᴋᴇɴ:** `{telegram_ping}`
+**sᴇʀᴠɪᴄᴇ ᴜᴘᴛɪᴍᴇ:** `{uptime}`
         """)
 
 
