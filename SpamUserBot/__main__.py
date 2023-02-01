@@ -16,7 +16,7 @@ async def start_bot():
 
 
 @UB.on_message(filters.command("start",prefixes = ["."]) & filters.user(SUDO_USERS))
-@UB.on_message(filters.command("start", prefixes = ["."]) & filters.user(SUDO_USERS))
+@UB2.on_message(filters.command("start", prefixes = ["."]) & filters.user(SUDO_USERS))
 async def start(_, message):
     await message.reply_text("ok working")
 
