@@ -10,3 +10,6 @@ async def _spam(client, message):
     replied = message.reply_to_message
     if not replied or len(message.command) < 2:
         await message.reply_text(mod_use)
+
+
+custom_handler("spam",_spam)
