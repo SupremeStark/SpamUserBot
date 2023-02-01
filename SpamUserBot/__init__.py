@@ -67,7 +67,7 @@ async def SpamUserBot():
         LOG.print("[bold red]sᴇssɪᴏɴ𝟷 ɴᴏᴛ ғᴏᴜɴᴅ")
         UB = Client("steve",api_id = API_ID , api_hash = API_HASH)
         try:
-            UB.start()
+            await UB.start()
         except:
             pass
       
@@ -87,7 +87,7 @@ async def SpamUserBot():
         LOG.print("[bold red]sᴇssɪᴏɴ𝟷 ɴᴏᴛ ғᴏᴜɴᴅ")
         UB2 = Client("steve",api_id = API_ID , api_hash = API_HASH)
         try:
-            UB2.start()
+            await UB2.start()
         except:
             pass    
 
