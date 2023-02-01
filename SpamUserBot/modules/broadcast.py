@@ -31,11 +31,11 @@ async def _broadcast(client, message):
     elif len(message.command) < 2:
         return await text.edit("**ᴇxᴀᴍᴩʟᴇ :**\n/broadcast [ᴍᴇssᴀɢᴇ] ᴏʀ [ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ]")       
     else:
-        text = message.text.split(None, 1)[1]
+        msg = message.text.split(None, 1)[1]
         sent = 0   
         for i in chats:
             try:
-                m = await client.send_message(i, text=text)           
+                m = await client.send_message(i, text=msg)           
                 sent += 1
             except FloodWait as e:
                 await asyncio.sleep(e.value)
