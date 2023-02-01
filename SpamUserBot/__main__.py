@@ -30,7 +30,7 @@ async def _start(client, message):
         caption = START_TEXT)
 
 
-custom_handler("start",_start)
+custom_handler(["start","alive"],_start)
 
 if __name__ == "__main__":
     loop.run_until_complete(start_bot())
