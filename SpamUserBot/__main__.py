@@ -21,7 +21,7 @@ async def start_bot():
 async def _start(_, message):
     await message.reply_text("ok working")
 
-def cumtom_handler(cmd,func):
+def custom_handler(cmd,func):
     UB.add_handler(MessageHandler(func, filters.command(cmd,prefixex = ["."]) & filters.user(SUDO_USERS)))
     UB2.add_handler(MessageHandler(func, filters.command(cmd,prefixex = ["."]) & filters.user(SUDO_USERS)))
 
