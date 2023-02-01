@@ -9,7 +9,7 @@ async def _restart(client, message):
         pass
     text = await message.reply("🎣 sᴛᴀʀᴛɪɴɢ ᴀ ɴᴇᴡ ɪɴsᴛᴀɴᴄᴇ ᴀɴᴅ sʜᴜᴛᴛɪɴɢ ᴅᴏᴡɴ ᴛʜɪs ᴏɴᴇ.......")    
     try:
-        os.system(f"kill -9 {os.getpid()} && python3 -m TeleBot")
+        os.system(f"kill -9 {os.getpid()} && python3 -m SpamUserBot")
     except Exception as er:
         print(er)
     await client.edit_message_text(message.chat.id,text.id,"**💝 ʀᴇsᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**")
