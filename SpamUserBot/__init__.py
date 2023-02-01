@@ -45,7 +45,9 @@ def get_readable_time(seconds: int) -> str:
 async def SpamUserBot():
     global BOT
     global UB
-    global UB2    
+    global UB2 
+    global Steve
+    Steve = UB = UB2   
     header = Table(show_header=True, header_style="bold yellow")
     header.add_column(LOG_MSG)
     LOG.print(header)
