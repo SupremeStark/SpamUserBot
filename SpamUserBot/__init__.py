@@ -42,13 +42,6 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 
-if SESSION:
-    UB = Client("SESSION",api_id = API_ID,api_hash = API_HASH, session_string = SESSION)
-    UB.start()
-
-if SESSION2:
-    UB2 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
-    UB2.start()
 
 async def SpamUserBot():
     global BOT
@@ -90,13 +83,13 @@ async def SpamUserBot():
         LOG.print("[bold red]sᴇssɪᴏɴ2 ɴᴏᴛ ғᴏᴜɴᴅ")
         
 
-    BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN)
+    BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN,in_memory=True)
     await BOT.start()
     LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
 
 
-#loop = asyncio.get_event_loop()
-#loop.run_until_complete(SpamUserBot())    
+loop = asyncio.get_event_loop()
+loop.run_until_complete(SpamUserBot())    
 
 
 
