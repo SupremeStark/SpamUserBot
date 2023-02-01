@@ -22,11 +22,11 @@ async def _stats(client, message):
             channels += 1
         elif dialog.chat.type == ChatType.BOT :
             bots += 1
-    done = "💖 ʜᴇʀᴇ's ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs....\n\n"
-    done += f"⦾ ʙᴏᴛs : {bots}\n"
-    done += f"⦾ ᴜsᴇʀs : {users}\n"
-    done += f"⦾ ɢʀᴏᴜᴘs : {groups}\n"
-    done += f"⦾ ᴄʜᴀɴɴᴇʟs : {channels}\n"
+    done = "💖 ʜᴇʀᴇ's ᴍɪɴᴇ ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs....\n\n"
+    done += f"**⦾ ʙᴏᴛs :** {bots}\n"
+    done += f"**⦾ ᴜsᴇʀs :** {users}\n"
+    done += f"**⦾ ɢʀᴏᴜᴘs :** {groups}\n"
+    done += f"**⦾ ᴄʜᴀɴɴᴇʟs :** {channels}\n"
     await text.edit(done)
 
 
