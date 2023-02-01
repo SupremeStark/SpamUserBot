@@ -14,8 +14,8 @@ async def _spam(client, message):
 
     if message.text[0].isalpha() and message.text[0] in PREFIXES :
         await message.reply(mod_use)
+    replied = message.reply_to_message
     text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
-    print(text)
     if len(text) == 2:
         num = int(text[0])
         to_spam = str(text[1])
@@ -23,9 +23,14 @@ async def _spam(client, message):
             await message.reply_text(err_msg)
         for i in range(num):
             try:
-                await message.reply_text(to_spam)
-            except FloodWait as i:
-                await asyncio.sleep(i.value)
+                await client.send_message(message.chat.id,to_spam)
+            except FloodWait as m:
+                await asyncio.sleep(m.value)
+    if replied and replied.photo:
+        photo = replied.photo.file_id
+        num = int(text[0]
+        for i in range(num):
+            await client.send_photo(message.chat.id,photo=photo, caption= (caption if replied.caption else None))   
              
         
         
