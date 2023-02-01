@@ -7,7 +7,7 @@ async def _stats(client, message):
     except:
         pass
     text = await message.reply("`ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs......`")
-    user = 0
+    users = 0
     bots = 0
     groups = 0
     channels = 0    
