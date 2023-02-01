@@ -14,6 +14,7 @@ TOKEN = Config.TOKEN
 SUDO_USERS = Config.SUDO_USERS
 SESSION = Config.SESSION
 SESSION2 = Config.SESSION2
+PREFIXES = Config.PREFIXES
 
 #rich
 LOG = Console()
