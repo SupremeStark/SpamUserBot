@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 import asyncio
 from config import Config
 from pyrogram import Client
