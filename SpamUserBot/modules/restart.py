@@ -12,7 +12,6 @@ async def _restart(client, message):
         os.system(f"kill -9 {os.getpid()} && python3 -m SpamUserBot")
     except Exception as er:
         print(er)
-    await client.edit_message_text(message.chat.id,text.id,"**💝 ʀᴇsᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**")
-
+    
 
 custom_handler("restart",_restart)
