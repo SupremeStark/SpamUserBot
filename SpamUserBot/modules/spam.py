@@ -1,3 +1,4 @@
+import asyncio
 from SpamUserBot import PREFIXES
 from SpamUserBot.steve.funcs import custom_handler
 from pyrogram.errors import FloodWait 
@@ -14,7 +15,7 @@ async def _spam(client, message):
     if message.text[0].isalpha() and message.text[0] in PREFIXES :
         await message.reply(mod_use)
     text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
-
+    print(text)
     if len(text) == 2:
         num = int(text[0])
         to_spam = str(text[1])
