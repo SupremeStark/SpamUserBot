@@ -42,7 +42,7 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 
-if SESSION1:
+if SESSION:
     UB = Client("SESSION",api_id = API_ID,api_hash = API_HASH, session_string = SESSION)
     UB.start()
 
