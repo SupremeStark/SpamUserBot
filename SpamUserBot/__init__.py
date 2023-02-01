@@ -51,6 +51,15 @@ async def SpamUserBot():
     header.add_column(LOG_MSG)
     LOG.print(header)
     LOG.print(f"[bold green]{EMOJI}")
+    if TOKEN:
+        BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN,in_memory=True)
+        await BOT.start()
+        LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
+        LOG.print("[bold orange]🔥ɴᴏᴡ ʙᴏᴏᴛɪɴɢ ᴄʟɪᴇɴᴛs.....")
+    else:
+        LOG.print("[bold red]ʙᴏᴛ ᴛᴏᴋᴇɴ ɴᴏᴛ ғᴏᴜɴᴅ ᴇxɪsᴛɪɴɢ......")
+  
+
     if SESSION:
         try:
             UB = Client("SESSION",api_id = API_ID,api_hash = API_HASH, session_string = SESSION)
@@ -65,7 +74,7 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ𝟷 ɴᴏᴛ ғᴏᴜɴᴅ")
-        
+        UB = None
       
     if SESSION2:
         try:
@@ -81,12 +90,9 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ2 ɴᴏᴛ ғᴏᴜɴᴅ")
-        UB2 = UB
+        UB2 = None
 
-    BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN,in_memory=True)
-    await BOT.start()
-    LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
-
+    
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(SpamUserBot())    
