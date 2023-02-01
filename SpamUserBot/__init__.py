@@ -5,7 +5,7 @@ from config import Config
 from pyrogram import Client
 from rich.console import Console
 from rich.table import Table
-from SpamUserBot.steve.string import LOG_MSG ,EMOJI
+from SpamUserBot.steve.strings import LOG_MSG ,EMOJI
 
 #getting variables
 API_ID = Config.API_ID
