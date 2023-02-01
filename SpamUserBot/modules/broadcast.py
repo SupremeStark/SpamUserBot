@@ -7,7 +7,7 @@ async def _broadcast(client, message):
         message.delete()
     except:
         pass 
-    text =  await message.reply("`ɢᴇᴛᴛɪɴɢ ᴀʟʟ ᴄʜᴀᴛs ɪᴅ....`)
+    text =  await message.reply("`ɢᴇᴛᴛɪɴɢ ᴀʟʟ ᴄʜᴀᴛs ɪᴅ....`")
     replied = message.reply_to_message
     chats = []
     async for dialog in client.get_dialogs():
