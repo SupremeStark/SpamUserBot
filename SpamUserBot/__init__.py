@@ -95,8 +95,8 @@ async def SpamUserBot():
     LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(SpamUserBot())    
+#loop = asyncio.get_event_loop()
+#loop.run_until_complete(SpamUserBot())    
 
 
 
