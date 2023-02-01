@@ -25,7 +25,7 @@ def custom_handler(cmd,func):
     UB.add_handler(MessageHandler(func, filters.command(cmd,prefixes = ["."]) & filters.user(SUDO_USERS)))
     UB2.add_handler(MessageHandler(func, filters.command(cmd,prefixes = ["."]) & filters.user(SUDO_USERS)))
 
-custom_handler(_start,"start")
+custom_handler("start",_start)
 
 if __name__ == "__main__":
     loop.run_until_complete(start_bot())
