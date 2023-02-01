@@ -28,7 +28,7 @@ async def _spam(client, message):
                 await asyncio.sleep(m.value)
     if replied and replied.photo:
         photo = replied.photo.file_id
-        num = int(text[0]
+        num = int(text[0])
         for i in range(num):
             await client.send_photo(message.chat.id,photo=photo, caption= (caption if replied.caption else None))   
              
