@@ -12,11 +12,9 @@ async def _stats(client, message):
     groups = 0
     channels = 0    
     async for dialog in client.get_dialogs():
-        if dialog.chat.type in [ChatType.BOT,ChatType.SUPERGROUP,ChatType.CHANNEL,ChatType.GROUP]:
-            pass
-        else:
+        if dialog.chat.type == ChatType.PRIVATE:            
             users += 1
-        if dialog.chat.type in [ChatType.SUPERGROUP,ChatType.GROUP]:
+        elif dialog.chat.type in [ChatType.SUPERGROUP,ChatType.GROUP]:
             groups += 1
         elif dialog.chat.type == ChatType.CHANNEL :
             channels += 1
