@@ -7,6 +7,7 @@ async def _broadcast(client, message):
     async for dialog in client.get_dialogs():
         if dialog.chat.type in [ChatType.SUPERGROUP,ChatType.GROUP,ChatType.PRIVATE]:
             chats.append(dialog.chat.id)
+    print(chats)
     if message.reply_to_message:
         x = message.reply_to_message.id
         y = message.chat.id
