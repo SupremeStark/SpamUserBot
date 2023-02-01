@@ -1,3 +1,4 @@
+from SpamUserBot import PREFIXES
 from SpamUserBot.steve.funcs import custom_handler
 
 async def _spam(client, message):
@@ -9,18 +10,9 @@ async def _spam(client, message):
         pass
     replied = message.reply_to_message
 
-    if replied and len(message.command) != 2:
-        await message.reply_text(mod_use)
-    elif not replied and len(message.command) != 3:
-        await message.reply_text(mod_use)
-    if replied:
-        if replied.caption:
-            text = replied.caption
-        else:
-            text = replied.caption 
-    else:
-        text = message.text.split(None,1)[1]
-    print(text)
-
+    if message.text[0].isalpha() and message.text[0] in PREFIXES :
+        await message.reply(mod_use)
+    Deadly = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
+    print(Deadly)
 
 custom_handler("spam",_spam)
