@@ -2,7 +2,7 @@ import asyncio
 import importlib
 
 from pyrogram import idle , filters , Client 
-from SpamUserBot import LOG ,SUDO_USERS  , Steve
+from SpamUserBot import LOG ,SUDO_USERS  , UB, UB2
 from SpamUserBot.modules import ALL_MODULES
 
 loop = asyncio.get_event_loop()
@@ -15,7 +15,8 @@ async def start_bot():
     LOG.print("[bold red]ᴄᴀɴᴄᴇʟɪɴɢ ᴀʟʟ ᴛᴀsᴋs.")
 
 
-@Steve.on_message(filters.command("start", prefixes = ["."]) & filters.user(SUDO_USERS))
+@UB.on_message(filters.command("start", prefixes = ["."]) & filters.user(SUDO_USERS))
+@UB2.on_message(filters.command("start", prefixes = ["."]) & filters.user(SUDO_USERS))
 async def _start(_, message):
     await message.reply_text("ok working")
 
