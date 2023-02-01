@@ -85,6 +85,7 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ2 ɴᴏᴛ ғᴏᴜɴᴅ")
+        UB2 = UB1
 
     BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN)
     await BOT.start()
