@@ -12,9 +12,8 @@ async def _spam(client, message):
 
     if message.text[0].isalpha() and message.text[0] in PREFIXES :
         await message.reply(mod_use)
-    text = message.text.split(None,1)
-    if message.command in text:
-        text.replace(message.command,"")
+    text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
+
     if len(text) == 2:
         num = int(text[0])
         to_spam = str(text[1])
