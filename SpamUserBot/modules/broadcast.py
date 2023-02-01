@@ -4,7 +4,7 @@ from pyrogram.errors import FloodWait
 
 async def _broadcast(client, message):
     try:
-        message.delete()
+        await message.delete()
     except:
         pass 
     text =  await message.reply("`ɢᴇᴛᴛɪɴɢ ᴀʟʟ ᴄʜᴀᴛs ɪᴅ....`")
