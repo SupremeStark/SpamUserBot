@@ -91,7 +91,7 @@ async def SpamUserBot():
         except:
             pass    
 
-    BOT = Client("BotHun",API_ID,API_HASH,bot_token=TOKEN)
+    BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN)
     await BOT.start()
     LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
 
