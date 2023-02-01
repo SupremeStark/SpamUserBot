@@ -13,7 +13,7 @@ async def _broadcast(client, message):
     async for dialog in client.get_dialogs():
         if dialog.chat.type in [ChatType.SUPERGROUP,ChatType.GROUP,ChatType.PRIVATE]:
             chats.append(dialog.chat.id)
-    await text.edit("`ɢᴏᴛ {len(chats)} ᴄʜᴀᴛs. ɴᴏᴡ sᴛᴀʀᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ.......`")
+    await text.edit(f"`ɢᴏᴛ {len(chats)} ᴄʜᴀᴛs. ɴᴏᴡ sᴛᴀʀᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ.......`")
     if replied:
         x = message.reply_to_message.id
         y = message.chat.id
