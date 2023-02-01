@@ -1,5 +1,7 @@
 from pyrogram.handlers import MessageHandler
 from SpamUserBot import UB, UB2 , PREFIXES
+from pyrogram import filters 
+
 
 def custom_handler(cmd,func):
     UB.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
