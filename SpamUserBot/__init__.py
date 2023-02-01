@@ -59,7 +59,7 @@ async def SpamUserBot():
         LOG.print("[bold orange]🔥ɴᴏᴡ ʙᴏᴏᴛɪɴɢ ᴄʟɪᴇɴᴛs.....")
     else:
         LOG.print("[bold red]ʙᴏᴛ ᴛᴏᴋᴇɴ ɴᴏᴛ ғᴏᴜɴᴅ ᴇxɪsᴛɪɴɢ......")
-  
+        sys.exit(1) 
 
     if SESSION:
         try:
