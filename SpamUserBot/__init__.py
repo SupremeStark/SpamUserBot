@@ -84,12 +84,7 @@ async def SpamUserBot():
         except Exception as idk:
             LOG.print(f"[bold red]{idk}")
     else:
-        LOG.print("[bold red]sᴇssɪᴏɴ𝟷 ɴᴏᴛ ғᴏᴜɴᴅ")
-        UB2 = Client("steve",api_id = API_ID , api_hash = API_HASH)
-        try:
-            await UB2.start()
-        except:
-            pass    
+        LOG.print("[bold red]sᴇssɪᴏɴ2 ɴᴏᴛ ғᴏᴜɴᴅ")
 
     BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN)
     await BOT.start()
