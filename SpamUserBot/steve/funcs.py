@@ -1,4 +1,4 @@
-from pyrogram.hanlders import MessageHandler
+from pyrogram.handlers import MessageHandler
 from SpamUserBot import UB, UB2 , PREFIXES
 
 def custom_handler(cmd,func):
