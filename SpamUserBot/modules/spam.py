@@ -12,7 +12,19 @@ async def _spam(client, message):
 
     if message.text[0].isalpha() and message.text[0] in PREFIXES :
         await message.reply(mod_use)
-    Deadly = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
-    print(Deadly)
+    text = message.text.split(None,1)
+    if len(text) == 2:
+        num = int(text[0])
+        to_spam = str(text[1])
+        if num > 100:
+            await message.reply_text(err_msg)
+        for i in range(num):
+            try:
+                await message.reply_text(to_spam)
+            except FloodWait as i:
+                await asyncio.sleep(i.value)
+             
+        
+        
 
 custom_handler("spam",_spam)
