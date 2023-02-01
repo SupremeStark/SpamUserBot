@@ -31,7 +31,7 @@ async def _spam(client, message):
         num = int(text[0])
         for i in range(num):
             try:
-                await client.send_photo(message.chat.id,photo=photo, caption= (caption if replied.caption else None)) 
+                await client.send_photo(message.chat.id,photo=photo, caption=(txt if replied.caption else None)) 
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
              
