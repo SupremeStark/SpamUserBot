@@ -113,7 +113,7 @@ async def _spam(client, message):
             if chat_id not in SPAM_CHATS:
                 break
             try:
-                await client.send_animation(message.chat.id, animation = file, caption=txt) 
+                await client.send_animation(chat_id,file, caption=txt) 
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
                                                           
