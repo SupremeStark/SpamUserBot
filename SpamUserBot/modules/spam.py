@@ -59,7 +59,7 @@ async def _spam(client, message):
             await message.reply_text(err_msg)
         for i in range(num):
             try:
-                await client.send_video(message.chat.id,photo=video, caption=txt) 
+                await client.send_video(message.chat.id,video=video, caption=txt) 
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
                      
