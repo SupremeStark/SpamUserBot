@@ -14,7 +14,8 @@ async def _spam(client, message):
 
     if message.text[0].isalpha() and message.text[0] in PREFIXES :
         await message.reply_text(mod_use)
-    if len(message.command) > 1:
+
+    if len(message.command) < 1:
         await message.reply_text(mod_use)
 
     replied = message.reply_to_message
