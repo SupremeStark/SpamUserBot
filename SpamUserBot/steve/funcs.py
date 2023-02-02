@@ -9,6 +9,29 @@ def custom_handler(cmd,func):
 
 
 
+async def get_user_id(message, text:str):
+    def is_int(text : str):
+        try:
+            int(text)
+        except ValueError:
+            return False
+        return True
+    
+    text = text.strip()
+    if is_int(text):
+        return int(text)
+
+    entities = message.entities
+    app = message._client
+    if len(entities) < 2:
+        return (await app.get_users(text)).id
+    entity = entities[1]
+    if entity.type == MessageEntityType.MENTION:
+        return (await app.get_users(text)).id
+    if entity.type == MessageEntityType.TEXT_MENTION:
+        return entity.user.id
+    return None
+
 async def get_id_reason_or_rank(message,sender_chat=False):
     args = message.text.strip().split()
     text = message.text
