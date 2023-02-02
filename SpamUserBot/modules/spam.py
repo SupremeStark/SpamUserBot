@@ -63,6 +63,50 @@ async def _spam(client, message):
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
                      
-        
+    if replied and replied.document:
+        doc = replied.document.file_id 
+        if text[0].isdigit():
+            num = int(text[0]) 
+        else:
+            await message.reply_text("**𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ**")             
+        if not replied.caption:
+            txt = None
+        txt = replied.caption
+        if num > 100:
+            await message.reply_text(err_msg)
+        for i in range(num):
+            try:
+                await client.send_documemt(message.chat.id,video=doc, caption=txt) 
+            except FloodWait as m:
+                await asyncio.sleep(m.value)  
+                     
+    if replied and replied.sticker:
+        sticker = replied.sticker.file_id 
+        if text[0].isdigit():
+            num = int(text[0]) 
+        else:
+            await message.reply_text("**𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ**")             
+        if num > 100:
+            await message.reply_text(err_msg)
+        for i in range(num):
+            try:
+                await client.send_sticker(message.chat.id,sticker) 
+            except FloodWait as m:
+                await asyncio.sleep(m.value)  
+                             
+    if replied and replied.text:
+        text = replied.text 
+        if text[0].isdigit():
+            num = int(text[0]) 
+        else:
+            await message.reply_text("**𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ**")             
+        if num > 100:
+            await message.reply_text(err_msg)
+        for i in range(num):
+            try:
+                await client.send_message(message.chat.id,text) 
+            except FloodWait as m:
+                await asyncio.sleep(m.value)  
+                             
 
 custom_handler("spam",_spam)
