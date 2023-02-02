@@ -47,7 +47,7 @@ async def _spam(client, message):
                 await asyncio.sleep(m.value)  
              
     if replied and replied.video:
-        photo = replied.video.file_id 
+        video = replied.video.file_id 
         if text[0].isdigit():
             num = int(text[0]) 
         else:
