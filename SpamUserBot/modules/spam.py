@@ -76,7 +76,7 @@ async def _spam(client, message):
             await message.reply_text(err_msg)
         for i in range(num):
             try:
-                await client.send_documemt(message.chat.id,video=doc, caption=txt) 
+                await client.send_document(message.chat.id,doc, caption=txt) 
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
                      
