@@ -32,10 +32,8 @@ async def _spam(client, message):
                 await asyncio.sleep(m.value)
     if replied and replied.photo:
         photo = replied.photo.file_id
-        num = int(text[0])
-        if not replied.caption:            
-            txt = None        
-        txt = replied.caption
+        num = int(text[0])        
+        txt = (txt = None if not replied.caption else txt = replied.caption)
         if num > 100:
             await message.reply_text(err_msg)
         for i in range(num):
