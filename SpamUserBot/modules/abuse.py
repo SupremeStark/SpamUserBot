@@ -2,7 +2,7 @@ from SpamUserBot.steve.funcs import custom_handler,extract_user_id
 
 
 
-def _abuse(client, message):
+async def _abuse(client, message):
     try:
         await message.delete()
     except:
