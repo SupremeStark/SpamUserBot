@@ -95,7 +95,7 @@ async def _spam(client, message):
                 await asyncio.sleep(m.value)  
                              
     if replied and replied.text:
-        text = replied.text 
+        msg = replied.text 
         if text[0].isdigit():
             num = int(text[0]) 
         else:
@@ -104,7 +104,7 @@ async def _spam(client, message):
             await message.reply_text(err_msg)
         for i in range(num):
             try:
-                await client.send_message(message.chat.id,text) 
+                await client.send_message(message.chat.id,msg) 
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
                              
