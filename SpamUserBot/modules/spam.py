@@ -13,7 +13,10 @@ async def _spam(client, message):
     replied = message.reply_to_message
 
     if message.text[0].isalpha() and message.text[0] in PREFIXES :
-        await message.reply(mod_use)
+        await message.reply_text(mod_use)
+    if len(message.command) > 1:
+        await message.reply_text(mod_use)
+
     replied = message.reply_to_message
     text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
     if len(text) == 2:
