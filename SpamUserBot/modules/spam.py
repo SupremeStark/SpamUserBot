@@ -19,12 +19,12 @@ async def _spam(client, message):
         await message.reply_text(mod_use)
 
     replied = message.reply_to_message
-    text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
-    if text[0].isdigit():
-        num = int(text[0]) 
-    else:
-        await message.reply_text("**𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ**")
+    text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)    
     if len(text) == 2:
+        if text[0].isdigit():
+            num = int(text[0]) 
+        else:
+            await message.reply_text("**𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ**")
         to_spam = str(text[1])
         if num > 100:
             await message.reply_text(err_msg)
@@ -34,7 +34,11 @@ async def _spam(client, message):
             except FloodWait as m:
                 await asyncio.sleep(m.value)
     if replied and replied.photo:
-        photo = replied.photo.file_id              
+        photo = replied.photo.file_id 
+        if text[0].isdigit():
+            num = int(text[0]) 
+        else:
+            await message.reply_text("**𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ**")             
         if not replied.caption:
             txt = None
         txt = replied.caption
