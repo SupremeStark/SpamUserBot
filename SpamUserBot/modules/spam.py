@@ -16,7 +16,7 @@ async def _spam(client, message):
         pass
     replied = message.reply_to_message
     chat_id = message.chat.id
-    SPAM_CHATS.appned(chat_id)
+    SPAM_CHATS.append(chat_id)
     if len(message.command) == 1  :
         await message.reply_text(mod_use)     
     replied = message.reply_to_message
