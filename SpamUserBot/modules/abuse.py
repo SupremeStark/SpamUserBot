@@ -9,11 +9,6 @@ async def _abuse(client, message):
         pass
     if len(message.command) == 1:
         return await message.reply_text("**Mᴏᴅᴜʟᴇ ɴᴀᴍᴇ = ᴀʙᴜsᴇ**\n\nCᴏᴍᴍᴀɴᴅ:\n\n .ɢᴀʟɪ <ᴜsᴇʀ ʜᴀɴᴅʟᴇʀ>\n\nɪᴛ ᴡɪʟʟ ᴄᴏɴᴛɪɴᴜᴏᴜsʟʏ ᴀʙᴜsᴇ ᴜɴᴛɪʟ ʏᴏᴜ ʀᴇsᴛᴀʀᴛ!!.")
-    user1 = await extract_user_id(message)
-    args = message.text.strip().split()
-    user, reason = text.split(None, 2)[1:]
-    print(args, user,reason)
-    print(user1)
-
+    print(await extract_user_id(message))
 
 custom_handler("abuse",_abuse)
