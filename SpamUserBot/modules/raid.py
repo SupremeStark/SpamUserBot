@@ -11,9 +11,18 @@ async def _raid(client, message):
     text = message.text.split()
     text.pop(0)
     print(text)
-   # if len(text) == 2:
-   #     count = int(text[1]) if text[1].isdigit() else await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
-   #     print(count)
+    if len(text) == 2:
+        user = str(text[1])
+        try:
+            mm = await client.get_users(user)
+        except Exception as e:
+            print(e)
+        name = mm.first_name
+        id = mm.id
+        mention = f"[{name}](tg://user?id={id})"
+        
+        count = int(text[0]) if text[0].isdigit() else await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
+        print(count)
     
 
 custom_handler("raid",_raid)
