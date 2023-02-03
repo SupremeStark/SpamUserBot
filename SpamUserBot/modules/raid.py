@@ -1,4 +1,5 @@
 import asyncio
+import random 
 from SpamUserBot.modules.cancel import SPAM_CHATS
 from SpamUserBot.steve.funcs import custom_handler
 from SpamUserBot.steve.strings import RAID
