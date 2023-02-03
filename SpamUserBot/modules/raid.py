@@ -8,7 +8,8 @@ async def _raid(client, message):
         pass
     if len(message.command) == 1:
         await message.reply_text("𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nᴄᴏᴍᴍᴀɴᴅ:\n\n.ʀᴀɪᴅ <ᴜsᴇʀ ʜᴀɴᴅʟᴇʀ>\n\nᴄᴏᴜɴᴛ ᴍᴜsᴛ ʙᴇ ᴀ ɪɴᴛᴇɢᴇʀ.")
-    print(message.command)    
-
+    text = message.command.pop(0)
+    print(text)
+    
 
 custom_handler("raid",_raid)
