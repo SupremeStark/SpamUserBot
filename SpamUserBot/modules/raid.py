@@ -1,7 +1,7 @@
 import asyncio
 import random 
 from SpamUserBot.modules.cancel import SPAM_CHATS
-from SpamUserBot.steve.funcs import custom_handler
+from SpamUserBot.steve.funcs import custom_handler , extract_user_id
 from SpamUserBot.steve.strings import RAID
 from pyrogram.errors import FloodWait 
 
@@ -10,15 +10,18 @@ async def _raid(client, message):
         await message.delete()
     except:
         pass
+    user_id = await extract_user_id(message)
     if len(message.command) == 1:
         await message.reply_text("𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nᴄᴏᴍᴍᴀɴᴅ:\n\n.ʀᴀɪᴅ <ᴜsᴇʀ ʜᴀɴᴅʟᴇʀ>\n\nᴄᴏᴜɴᴛ ᴍᴜsᴛ ʙᴇ ᴀ ɪɴᴛᴇɢᴇʀ.")
-    text = ("".join(message.text.split(maxsplit=1)[1:])).split(" ", 1)
+    if not user_id:
+        return await message.reply_text("**ᴍᴇɴᴛɪᴏɴ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ**")
+    text = message.text.split()
+    print(text)
     chat_id = message.chat.id
     SPAM_CHATS.append(chat_id)
     if len(text) == 2:
-        count = int(text[0]) if text[0].isdigit() else await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
-        user = str(text[1])
-        mm = await client.get_users(user)
+        count = int(text[1]) if text[1].isdigit() else await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
+        mm = await client.get_users(user_id)
         name = mm.first_name
         id = mm.id
         mention = f"[{name}](tg://user?id={id})"                        
