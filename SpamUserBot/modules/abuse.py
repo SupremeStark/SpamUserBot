@@ -1,3 +1,4 @@
+import asyncio
 from SpamUserBot.steve.funcs import custom_handler,extract_user_id , get_user_id
 from pyrogram.errors import FloodWait
 from SpamUserBot.modules.cancel import SPAM_CHATS
@@ -10,7 +11,7 @@ async def _abuse(client, message):
         pass
     user_id = await extract_user_id(message)
     if len(message.command) == 1:
-        return await message.reply_text("**Mᴏᴅᴜʟᴇ ɴᴀᴍᴇ = ᴀʙᴜsᴇ**\n\nCᴏᴍᴍᴀɴᴅ:\n\n .ɢᴀʟɪ <ᴜsᴇʀ ʜᴀɴᴅʟᴇʀ>\n\nɪᴛ ᴡɪʟʟ ᴄᴏɴᴛɪɴᴜᴏᴜsʟʏ ᴀʙᴜsᴇ ᴜɴᴛɪʟ ʏᴏᴜ ʀᴇsᴛᴀʀᴛ!!.")
+        return await message.reply_text("**Mᴏᴅᴜʟᴇ ɴᴀᴍᴇ = ᴀʙᴜsᴇ**\n\nCᴏᴍᴍᴀɴᴅ:\n\n .ɢᴀʟɪ <ᴜsᴇʀ ʜᴀɴᴅʟᴇʀ>.")
     if not user_id:
         return await message.reply_text("**ᴍᴇɴᴛɪᴏɴ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ**")
     user = await client.get_users(user_id)
