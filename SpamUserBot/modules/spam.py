@@ -2,8 +2,7 @@ import asyncio
 from SpamUserBot import PREFIXES
 from SpamUserBot.steve.funcs import custom_handler
 from pyrogram.errors import FloodWait 
-
-SPAM_CHATS = []
+from SpamUserBot.modules.cancel import SPAM_CHATS
 
 
 
