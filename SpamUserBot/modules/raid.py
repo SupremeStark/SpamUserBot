@@ -19,12 +19,14 @@ async def _raid(client, message):
     print(text)
     chat_id = message.chat.id
     SPAM_CHATS.append(chat_id)
-    if len(text) == 2:
-        count = int(text[1]) if text[1].isdigit() else await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
+    if len(text) >= 2:
+        if text[1].isdigit():
+            count = int(text[1])  
+        else:
+            await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
         mm = await client.get_users(user_id)
         name = mm.first_name
-        id = mm.id
-        mention = f"[{name}](tg://user?id={id})"                        
+        mention = f"[{name}](tg://user?id={user_id})"                        
         for ok in range(count):
             GALI = random.choice(RAID)
             msg = f"{mention} {GALI}"
