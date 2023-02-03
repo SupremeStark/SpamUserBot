@@ -1,4 +1,4 @@
-
+from SpamUserBot.modules.cancel import SPAM_CHATS
 
 
 async def _raid(client, message):
