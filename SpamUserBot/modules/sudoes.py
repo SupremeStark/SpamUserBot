@@ -21,7 +21,7 @@ async def _add_sudo(client, message):
     SUDO_USERS.append(user_id)
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
-    return await message.reply("ᴀᴅᴅᴇᴅ ᴛʜɪs ᴜsᴇʀ ɪɴ sᴜᴅᴏ ᴜsᴇʀs.")
+    return await message.reply_text("ᴀᴅᴅᴇᴅ ᴛʜɪs ᴜsᴇʀ ɪɴ sᴜᴅᴏ ᴜsᴇʀs.")
 
 async def _rm_sudo(client, message):
     try:
@@ -40,18 +40,20 @@ async def _rm_sudo(client, message):
     data["sudos"].remove(user_id)
     with open(ELEVATED_USERS_FILE, "w") as outfile:
             json.dump(data, outfile, indent=4)
+    return await message.reply_text("ʀᴇᴍᴏᴠᴇᴅ ғʀᴏᴍ sᴜᴅᴏ ᴜsᴇʀs")
 
 async def sudo_list(client, message):
     try:
         await message.delete()
     except:
         pass
-    text = "💝 sᴜᴅᴏ ᴜsᴇʀs:\n" 
+    text = "💝 sᴜᴅᴏ ᴜsᴇʀs:\n\n" 
+    print(SUDO_USERS)
     for i in SUDO_USERS:
         user_id = int(i)
         try:
             mention = (await client.get_users(user_id)).mention
-            text += f"• {mention}"
+            text += f"• {mention}\n"
         except Exception as e:
             print(e)
     return await message.reply_text(text)
