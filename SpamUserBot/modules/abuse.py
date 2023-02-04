@@ -60,5 +60,10 @@ async def _abuse(client, message):
             await asyncio.sleep(0.3)
         except FloodWait as i:
             await asyncio.sleep(i.value)
+    try :
+        SPAM_CHATS.remove(chat_id)
+    except Exception:
+        pass
+
 
 custom_handler("abuse",_abuse)
