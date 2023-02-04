@@ -24,5 +24,9 @@ async def _pornspam(client, message):
             await client.send_video(chat_id,video=porm)
         except FloodWait as e:
             await asyncio.sleep(e.value)
+    try :
+        SPAM_CHATS.remove(message.chat.id)
+    except Exception:
+        pass
 
 custom_handler("pornspam",_pornspam)
