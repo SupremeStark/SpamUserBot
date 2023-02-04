@@ -65,7 +65,7 @@ async def SpamUserBot():
             await UB.start()
             ub = await UB.get_me()
             await UB.join_chat("Steve_Projects")
-            await UB.join_chat("Testing_support_group")
+            await UB.join_chat("Devs_Testing_Group")
             SUDO_USERS.append(ub.id)
             LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 𝟷 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
         except Exception as idk:
@@ -81,7 +81,7 @@ async def SpamUserBot():
             await UB2.start()
             ub2 = await UB2.get_me()
             await UB2.join_chat("Steve_Projects")
-            await UB2.join_chat("Testing_support_group")
+            await UB2.join_chat("Devs_Testing_Group")
             SUDO_USERS.append(ub2.id)
             LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 2 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
         except Exception as idk:
@@ -96,7 +96,7 @@ async def SpamUserBot():
             await UB3.start()
             ub3 = await UB3.get_me()
             await UB3.join_chat("Steve_Projects")
-            await UB3.join_chat("Testing_support_group")
+            await UB3.join_chat("Devs_Testing_Group")
             SUDO_USERS.append(ub3.id)
             LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 3 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
         except Exception as idk:
@@ -112,7 +112,7 @@ async def SpamUserBot():
             await UB4.start()
             ub4 = await UB4.get_me()
             await UB4.join_chat("Steve_Projects")
-            await UB4.join_chat("Testing_support_group")
+            await UB4.join_chat("Devs_Testing_Group")
             SUDO_USERS.append(ub4.id)
             LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 4 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
         except Exception as idk:
@@ -128,7 +128,7 @@ async def SpamUserBot():
             await UB5.start()
             ub5 = await UB5.get_me()
             await UB5.join_chat("Steve_Projects")
-            await UB5.join_chat("Testing_support_group")
+            await UB5.join_chat("Devs_Testing_Group")
             SUDO_USERS.append(ub5.id)
             LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 5 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
         except Exception as idk:
