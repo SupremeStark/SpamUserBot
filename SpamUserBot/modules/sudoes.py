@@ -1,45 +1,8 @@
 import os
 import json 
 from SpamUserBot import SUDO_USERS
-from SpamUserBot.steve.funcs import custom_handler,extract_user_id
+from SpamUserBot.steve.funcs import custom_handler
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "SpamUserBot/sudo.json")
-
-
-
-async def _add_sudo(client, message):
-    user_id = await extract_user_id(message)
-    try:
-        await message.delete()
-    except:
-        pass    
-    print(user_id)
-    if not user_id:
-        return await message.reply("ʙʀᴜʜ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ.")
-    if user_id in SUDO_USERS:
-        return await message.reply_text("ᴛʜɪs ᴜsᴇʀ ɪs ᴀʟʀᴇᴀᴅʏ ᴀ sᴜᴅᴏ ᴜsᴇʀ.")
-    async with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-    data["sudos"].append(user_id)
-    SUDO_USERS.append(user_id)
-    async with open(ELEVATED_USERS_FILE, "w") as outfile:
-        json.dump(data, outfile, indent=4)
-
-    return await message.reply_text("ᴀᴅᴅᴇᴅ ᴛʜɪs ᴜsᴇʀ ɪɴ sᴜᴅᴏ ᴜsᴇʀs.")
-
-async def _rm_sudo(client, message):
-    user_id = await extract_user_id(message)
-    try:
-        await message.delete()
-    except:
-        pass   
-    if not user_id:
-        return await message.reply("ʙʀᴜʜ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ.")
-    
-    if user_id not in SUDO_USERS:
-        return await message.reply_text("ᴛʜɪs ᴜsᴇʀ ᴀɪɴ'ᴛ ᴀ sᴜᴅᴏ ᴜsᴇʀ ᴀɴʏᴡᴀʏ ɪɢɴᴏʀᴇ ʜɪᴍ.")
-    SUDO_USERS.remove(user_id)    
-    return await message.reply_text("ʀᴇᴍᴏᴠᴇᴅ ғʀᴏᴍ sᴜᴅᴏ ᴜsᴇʀs")
 
 async def sudo_list(client, message):
     try:
