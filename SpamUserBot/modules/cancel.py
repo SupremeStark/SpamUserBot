@@ -16,4 +16,4 @@ async def cancelcmd(_, message):
         return       
 
 
-custom_hanlder("cancel",cancelcmd)
+custom_handler(["cancel","stop"],cancelcmd)
