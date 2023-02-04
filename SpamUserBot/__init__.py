@@ -48,7 +48,11 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 async def SpamUserBot():
-    global UB,UB2,UB3,UB4,UB5            
+    global UB
+    global UB2
+    global UB3
+    global UB4
+    global UB5                
     header = Table(show_header=True, header_style="bold yellow")
     header.add_column(LOG_MSG)
     LOG.print(header)
