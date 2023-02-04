@@ -57,7 +57,9 @@ async def sudo_list(client, message):
     return await message.reply_text(text)
 
 
-
+custom_handler("addsudo",_add_sudo)
+custom_handler("rmsudo",_rm_sudo)
+custom_handler("sudolist",sudo_list)
 
 
 
