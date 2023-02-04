@@ -37,6 +37,10 @@ async def _raid(client, message):
             except FloodWait as e:
                   print(e)
                   await asyncio.sleep(e.value) 
+    try :
+        SPAM_CHATS.remove(message.chat.id)
+    except Exception:
+        pass
     
 
 custom_handler("raid",_raid)
