@@ -129,11 +129,14 @@ async def _spam(client, message):
                 await client.send_message(message.chat.id,msg) 
             except FloodWait as m:
                 await asyncio.sleep(m.value)  
+    try :
+        SPAM_CHATS.remove(message.chat.id)
+    except Exception:
+        pass
                              
 
 async def _delayspam(client, message):
-    mod_use = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nᴄᴏᴍᴍᴀɴᴅ:\n\n.sᴘᴀᴍ <ᴄᴏᴜɴᴛ> <ᴍᴇssᴀɢᴇ ᴛᴏ sᴘᴀᴍ>\n\n.sᴘᴀᴍ <ᴄᴏᴜɴᴛ> <ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ>\n\ncᴏᴜɴᴛ ᴍᴜsᴛ ʙᴇ ᴀ ɪɴᴛᴇɢᴇʀ."
-    err_msg = "sᴘᴀᴍ Mᴏᴅᴜʟᴇ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ᴛɪʟʟ 𝟷𝟶𝟶 ᴄᴏᴜɴᴛ."
+    mod_use = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = Dᴇʟᴀʏ 𝗦𝗽𝗮𝗺\ɴ\ɴᴄᴏᴍᴍᴀɴᴅ:\n\n.ᴅsᴘᴀᴍ <ᴄᴏᴜɴᴛ> <ᴍᴇssᴀɢᴇ ᴛᴏ sᴘᴀᴍ> <ᴅᴇʟᴀʏ ᴛɪᴍᴇ> \n\n.sᴘᴀᴍ <ᴄᴏᴜɴᴛ> <ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ> <ᴅᴇʟᴀʏ ᴛɪᴍᴇ>\n\nᴄᴏᴜɴᴛ ᴍᴜsᴛ ʙᴇ ᴀ ɪɴᴛᴇɢᴇʀ"
     try:
         await message.delete()
     except:
@@ -141,8 +144,6 @@ async def _delayspam(client, message):
     replied = message.reply_to_message
     chat_id = message.chat.id
     SPAM_CHATS.append(chat_id)
-  #  if len(message.command) < 3  :
-  #       await message.reply_text(mod_use)     
     replied = message.reply_to_message
     text = message.command
     text.pop(0)   
@@ -252,7 +253,11 @@ async def _delayspam(client, message):
             
             await asyncio.sleep(sleep)
     else:
-        await message.reply(mod_use)  
+        await message.reply(mod_use) 
+    try :
+        SPAM_CHATS.remove(message.chat.id)
+    except Exception:
+        pass 
                              
 
 custom_handler("spam",_spam)
