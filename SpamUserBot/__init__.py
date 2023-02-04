@@ -16,7 +16,7 @@ SESSION = Config.SESSION
 SESSION2 = Config.SESSION2
 PREFIXES = Config.PREFIXES
 try:
-    SUDO_USERS = {int(x) for x in Config.SUDO_USERS or []}
+    SUDO_USERS = [int(x) for x in Config.SUDO_USERS]
 except Exception as er:
     print(er)
 
