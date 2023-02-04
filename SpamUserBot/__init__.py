@@ -12,10 +12,14 @@ from SpamUserBot.steve.strings import LOG_MSG ,EMOJI
 API_ID = Config.API_ID
 API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
-SUDO_USERS = Config.SUDO_USERS
 SESSION = Config.SESSION
 SESSION2 = Config.SESSION2
 PREFIXES = Config.PREFIXES
+try:
+    SUDO_USERS = {int(x) for x in Config.SUDO_USERS or []}
+except Exception as er:
+    print(er)
+
 
 #rich
 LOG = Console()
