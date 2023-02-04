@@ -14,6 +14,9 @@ API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
 SESSION = Config.SESSION
 SESSION2 = Config.SESSION2
+SESSION3 = Config.SESSION3
+SESSION4 = Config.SESSION4
+SESSION5 = Config.SESSION5
 PREFIXES = Config.PREFIXES
 SUDO_USERS = Config.SUDO_USERS
 
@@ -46,22 +49,12 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 async def SpamUserBot():
-    global BOT
-    global UB
-    global UB2    
+    global UB,UB2,UB3,UB4,UB5            
     header = Table(show_header=True, header_style="bold yellow")
     header.add_column(LOG_MSG)
     LOG.print(header)
     LOG.print(f"[bold green]{EMOJI}")
-    if TOKEN:
-        BOT = Client("BotHun",api_id = API_ID,api_hash = API_HASH,bot_token=TOKEN,in_memory=True)
-        await BOT.start()
-        LOG.print("[bold yellow]💝 ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ......")
-        LOG.print("[bold orange]🔥ɴᴏᴡ ʙᴏᴏᴛɪɴɢ ᴄʟɪᴇɴᴛs.....")
-    else:
-        LOG.print("[bold red]ʙᴏᴛ ᴛᴏᴋᴇɴ ɴᴏᴛ ғᴏᴜɴᴅ ᴇxɪsᴛɪɴɢ......")
-        sys.exit(1) 
-
+    LOG.print("[bold orange]ʙᴏᴏᴛɪɴɢ ᴄʟɪᴇɴᴛs.....")    
     if SESSION:
         try:
             UB = Client("SESSION",api_id = API_ID,api_hash = API_HASH, session_string = SESSION)
@@ -93,6 +86,53 @@ async def SpamUserBot():
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ2 ɴᴏᴛ ғᴏᴜɴᴅ")
         UB2 = None
+    if SESSION3:
+        try:
+            UB3 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 3")
+            await UB3.start()
+            ub3 = await UB3.get_me()
+            await UB3.join_chat("Steve_Projects")
+            await UB3.join_chat("Testing_support_group")
+            SUDO_USERS.append(ub3.id)
+            LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 3 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+        except Exception as idk:
+            LOG.print(f"[bold red]{idk}")
+    else:
+        LOG.print("[bold red]sᴇssɪᴏɴ3 ɴᴏᴛ ғᴏᴜɴᴅ")
+        UB3 = None
+
+    if SESSION4:
+        try:
+            UB4 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 4")
+            await UB4.start()
+            ub4 = await UB4.get_me()
+            await UB4.join_chat("Steve_Projects")
+            await UB4.join_chat("Testing_support_group")
+            SUDO_USERS.append(ub4.id)
+            LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 4 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+        except Exception as idk:
+            LOG.print(f"[bold red]{idk}")
+    else:
+        LOG.print("[bold red]sᴇssɪᴏɴ4 ɴᴏᴛ ғᴏᴜɴᴅ")
+        UB4 = None
+
+    if SESSION5:
+        try:
+            UB5 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 5")
+            await UB5.start()
+            ub5 = await UB5.get_me()
+            await UB5.join_chat("Steve_Projects")
+            await UB5.join_chat("Testing_support_group")
+            SUDO_USERS.append(ub5.id)
+            LOG.print("[bold yellow]✨ sᴇssɪᴏɴ 5 sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+        except Exception as idk:
+            LOG.print(f"[bold red]{idk}")
+    else:
+        LOG.print("[bold red]sᴇssɪᴏɴ5 ɴᴏᴛ ғᴏᴜɴᴅ")
+        UB5 = None
 
     
 
