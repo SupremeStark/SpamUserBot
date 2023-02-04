@@ -11,8 +11,9 @@ async def _pornspam(client, message):
     except:
         pass
     if len(message.command) <= 1:
-        await message.reply_text("**ᴘᴏʀɴsᴘᴀᴍ ᴜsᴀɢᴇ :**\n\n.ᴘᴏʀɴsᴘᴀᴍ < ᴄᴏᴜɴᴛ > <ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ>")
-    count = message.command[1]
+        await message.reply_text("**ᴘᴏʀɴsᴘᴀᴍ ᴜsᴀɢᴇ :**\n\n.ᴘᴏʀɴsᴘᴀᴍ < ᴄᴏᴜɴᴛ >")
+    count = int(message.command[1]) if message.command[1].isdigit() else await message.reply_text("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
+    
     chat_id = message.chat.id
     SPAM_CHATS.append(chat_id)    
     for _ in range(count):
