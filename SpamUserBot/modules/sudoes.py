@@ -16,12 +16,9 @@ async def _add_sudo(client, message):
         return await message.reply("ʙʀᴜʜ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ.")
     if user_id in SUDO_USERS:
         return await message.reply_text("ᴛʜɪs ᴜsᴇʀ ɪs ᴀʟʀᴇᴀᴅʏ ᴀ sᴜᴅᴏ ᴜsᴇʀ.")
-  #  with open(ELEVATED_USERS_FILE, "r") as infile:
-  #       data = json.load(infile)
-   # data["sudos"].append(user_id)
+  
     SUDO_USERS.append(user_id)
-   # with open(ELEVATED_USERS_FILE, "w") as outfile:
-  #      json.dump(data, outfile, indent=4)
+   
     return await message.reply_text("ᴀᴅᴅᴇᴅ ᴛʜɪs ᴜsᴇʀ ɪɴ sᴜᴅᴏ ᴜsᴇʀs.")
 
 async def _rm_sudo(client, message):
