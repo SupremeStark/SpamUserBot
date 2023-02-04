@@ -18,14 +18,16 @@ async def start_bot():
     await idle()
     LOG.print("[bold red]ᴄᴀɴᴄᴇʟɪɴɢ ᴀʟʟ ᴛᴀsᴋs.")
 
-
+mention = None
 
 async def _start(client, message):
+    global mention 
     try:
         await message.delete()
     except:
         pass
-    me = (await client.get_me()).mention    
+    if not mention:
+        me = (await client.get_me()).mention    
     msg = await message.reply("⚡")
     await asyncio.sleep(1.5)
     await msg.delete()
