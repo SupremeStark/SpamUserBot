@@ -10,7 +10,7 @@ async def _add_sudo(client, message):
         await message.delete()
     except:
         pass
-    user_id = extract_user_id(message)
+    user_id = await extract_user_id(message)
     if not user_id:
         return await message.reply("ʙʀᴜʜ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ.")
     if user_id in SUDO_USERS:
@@ -28,7 +28,7 @@ async def _rm_sudo(client, message):
         await message.delete()
     except:
         pass
-    user_id = extract_user_id(message)
+    user_id = await extract_user_id(message)
     if not user_id:
         return await message.reply("ʙʀᴜʜ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ.")
     with open(ELEVATED_USERS_FILE, "r") as infile:
