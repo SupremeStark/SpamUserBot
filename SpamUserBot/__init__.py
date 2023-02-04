@@ -11,7 +11,6 @@ from SpamUserBot.steve.strings import LOG_MSG ,EMOJI
 #getting variables
 API_ID = Config.API_ID
 API_HASH = Config.API_HASH
-TOKEN = Config.TOKEN
 SESSION = Config.SESSION
 SESSION2 = Config.SESSION2
 SESSION3 = Config.SESSION3
