@@ -15,11 +15,7 @@ TOKEN = Config.TOKEN
 SESSION = Config.SESSION
 SESSION2 = Config.SESSION2
 PREFIXES = Config.PREFIXES
-try:
-    SUDO_USERS = [int(x) for x in Config.SUDO_USERS]
-except Exception as er:
-    print(er)
-
+SUDO_USERS = Config.SUDO_USERS
 
 #rich
 LOG = Console()
