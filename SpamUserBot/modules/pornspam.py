@@ -1,7 +1,7 @@
 import random 
 import asyncio
 from SpamUserBot.modules.cancel import SPAM_CHATS
-from SpamUserBot.steve.funcs import custom_handler , extract_user_id
+from SpamUserBot.steve.funcs import custom_handler
 from pyrogram.errors import FloodWait
 from SpamUserBot.steve.strings import PORN
 
@@ -10,16 +10,11 @@ async def _pornspam(client, message):
         await message.delete()
     except:
         pass
-    user_id = await extract_user_id(message)
     if len(message.command) <= 1:
         await message.reply_text("**ᴘᴏʀɴsᴘᴀᴍ ᴜsᴀɢᴇ :**\n\n.ᴘᴏʀɴsᴘᴀᴍ < ᴄᴏᴜɴᴛ > <ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ>")
-    if not user_id:
-        await message.reply_text("ɢɪᴠᴇ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ")
     count = message.command[1]
     chat_id = message.chat.id
-    SPAM_CHATS.append(chat_id)
-    print(count)
-    mention = (await client.get_users(user_id)).mention 
+    SPAM_CHATS.append(chat_id)    
     for _ in range(count):
         if chat_id not in SPAM_CHATS:
             break
