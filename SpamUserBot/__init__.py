@@ -85,7 +85,7 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ2 ɴᴏᴛ ғᴏᴜɴᴅ")
-        UB2 = UB
+        UB2 = None
     if SESSION3:
         try:
             UB3 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
@@ -100,7 +100,7 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ3 ɴᴏᴛ ғᴏᴜɴᴅ")
-        UB3 = UB
+        UB3 = None
 
     if SESSION4:
         try:
@@ -116,7 +116,7 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ4 ɴᴏᴛ ғᴏᴜɴᴅ")
-        UB4 = UB
+        UB4 = None
 
     if SESSION5:
         try:
@@ -132,7 +132,7 @@ async def SpamUserBot():
             LOG.print(f"[bold red]{idk}")
     else:
         LOG.print("[bold red]sᴇssɪᴏɴ5 ɴᴏᴛ ғᴏᴜɴᴅ")
-        UB5 = UB
+        UB5 = None
 
     
 
