@@ -20,6 +20,10 @@ async def _hang(client, message):
             await client.send_message(chat_id,hang_text)
         except FloodWait as e:
             asyncio.sleep(e.value)
+    try :
+        SPAM_CHATS.remove(chat_id)
+    except Exception:
+        pass
 
 
 custom_handler("hang",_hang)
