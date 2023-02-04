@@ -91,7 +91,7 @@ async def SpamUserBot():
         UB2 = None
     if SESSION3:
         try:
-            UB3 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            UB3 = Client("SESSION3",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
             LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 3")
             await UB3.start()
             ub3 = await UB3.get_me()
@@ -107,7 +107,7 @@ async def SpamUserBot():
 
     if SESSION4:
         try:
-            UB4 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            UB4 = Client("SESSION4",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
             LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 4")
             await UB4.start()
             ub4 = await UB4.get_me()
@@ -123,7 +123,7 @@ async def SpamUserBot():
 
     if SESSION5:
         try:
-            UB5 = Client("SESSION2",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
+            UB5 = Client("SESSION5",api_id = API_ID,api_hash = API_HASH, session_string = SESSION2)
             LOG.print("[bold cyan]ɢᴏᴛᴄʜᴀ sᴇssɪᴏɴ 5")
             await UB5.start()
             ub5 = await UB5.get_me()
