@@ -13,9 +13,9 @@ loop = asyncio.get_event_loop()
 
 async def start_bot():
     for all_module in ALL_MODULES:
-        importlib.import_module("SpamUserBot.modules." + all_module)
+        importlib.import_module(f"SpamUserBot.modules.{all_module}")
     LOG.print("[bold yellow]ɴᴏᴡ ᴀᴍ ʀᴇᴀᴅʏ ᴛᴏ ғɪɢʜᴛ ʙᴏss..")
-    await idle() 
+    await idle()
     LOG.print("[bold red]ᴄᴀɴᴄᴇʟɪɴɢ ᴀʟʟ ᴛᴀsᴋs.")
 
 
