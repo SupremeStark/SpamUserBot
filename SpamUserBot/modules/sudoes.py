@@ -3,7 +3,6 @@ import json
 from SpamUserBot import SUDO_USERS
 from SpamUserBot.steve.funcs import custom_handler,extract_user_id
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "SpamUserBot/sudo.json")
 
 async def _add_sudo(client, message):
     user_id = await extract_user_id(message)
