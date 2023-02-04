@@ -49,7 +49,7 @@ async def sudo_list(client, message):
         pass
     text = "💝 sᴜᴅᴏ ᴜsᴇʀs:\n\n" 
     print(SUDO_USERS)
-    for i in SUDO_USERS:
+    for i in set(SUDO_USERS):
         user_id = int(i)
         try:
             mention = (await client.get_users(user_id)).mention
