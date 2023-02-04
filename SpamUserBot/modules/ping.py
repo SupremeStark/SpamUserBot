@@ -8,7 +8,7 @@ async def _ping(client, message):
     start = time.time()
     msg = await message.reply("`ᴘᴏɴɢ!!!`")
     end = time.time()
-    telegram_ping = str(round((end - start) * 1000, 3)) + " ms"
+    telegram_ping = f"{str(round((end - start) * 1000, 3))} ms"
     uptime = get_readable_time((time.time() - StartTime))
     await msg.edit(f"""
 𝗣𝗢𝗡𝗚 🥀!!

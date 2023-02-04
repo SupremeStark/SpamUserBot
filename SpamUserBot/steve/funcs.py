@@ -43,27 +43,21 @@ async def get_id_reason_or_rank(message,sender_chat=False):
     text = message.text
     user = None
     reason = None
-    replied = message.reply_to_message
-    if replied:
-                
-        if not replied.from_user:
-            if (
+    if replied := message.reply_to_message:
+        if replied.from_user:
+            id_ = replied.from_user.id
+
+        elif (
                     replied.sender_chat
                     and replied.sender_chat != message.chat.id
                     and sender_chat
             ):
-                id_ = replied.sender_chat.id
-            else:
-                return None, None
+            id_ = replied.sender_chat.id
         else:
-            id_ = replied.from_user.id
-
-        if len(args) < 2:
-            reason = None
-        else:
-            reason = text.split(None, 1)[1]
+            return None, None
+        reason = None if len(args) < 2 else text.split(None, 1)[1]
         return id_, reason
-    
+
     if len(args) == 2:
         user = text.split(None, 1)[1]
         return await get_user_id(message, user), None

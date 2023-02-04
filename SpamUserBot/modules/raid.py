@@ -26,8 +26,8 @@ async def _raid(client, message):
             await message.reply("𝟸ɴᴅ ᴀʀɢᴜᴍᴇɴᴛ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ.")
         mm = await client.get_users(user_id)
         name = mm.first_name
-        mention = f"[{name}](tg://user?id={user_id})"                        
-        for ok in range(count):
+        mention = f"[{name}](tg://user?id={user_id})"
+        for _ in range(count):
             GALI = random.choice(RAID)
             msg = f"{mention} {GALI}"
             if chat_id not in SPAM_CHATS:
@@ -36,7 +36,7 @@ async def _raid(client, message):
                 await client.send_message(chat_id,msg) 
             except FloodWait as e:
                   print(e)
-                  await asyncio.sleep(e.value) 
+                  await asyncio.sleep(e.value)
     try :
         SPAM_CHATS.remove(message.chat.id)
     except Exception:
