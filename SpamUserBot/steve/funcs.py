@@ -1,11 +1,14 @@
 from pyrogram.handlers import MessageHandler
-from SpamUserBot import UB, UB2 , PREFIXES , SUDO_USERS
+from SpamUserBot import PREFIXES , SUDO_USERS,UB,UB2,UB3,UB4,UB5
 from pyrogram import filters 
 
 
 def custom_handler(cmd,func):
     UB.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
     UB2.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
+    UB3.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
+    UB4.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
+    UB5.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
 
 
 
