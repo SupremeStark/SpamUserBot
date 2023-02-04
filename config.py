@@ -1,7 +1,4 @@
-
-
-class Config:
-    
+class Config:    
     API_ID = 14817849 
     API_HASH = "f72b972aadabef20c7ea193362f7c7ae"
     SESSION = "BQFnf5gAnTT-gqwHv-_Y-M6I2DF92IiMDfnMtAFDKNTKsn1K9q0JKC9ktjfiKCvnSYOETz8bxcHzMMCjoKXuPDGybOGnLGEpV3U6XoQJPp2yIzhOfjq2eZYAr4s7d8FhdeD5y4X_9W9R7CD5D7g7V-80iN3nvkXAfSZClFkP0BLVw_6ZS57ovzRtT61adpPrJLNXcwLqAZMkHDH3gR5Xv4V6fTGedK-gfteV1UpyQbxqIlwAs_lrbpTuh5ObuiJ6P68dZ39aDjeLx9bXqfdoiUpdQO-FHSL-Fwi50gRLQGnFqjoobhF7VNXMf-gM09ZE07GjoNV59zHsQIgRVwFs6_3BX9VnBwAAAAFt4zcmAA"
@@ -11,4 +8,4 @@ class Config:
     SESSION5 = ""
     TOKEN = "5865910837:AAHoEV6Y_5UeUZ9GwS7EFFujIr3qVHZzr4g"
     SUDO_USERS = [5505555398]
-    PREFIXES = [".","!","?",]
+    PREFIXES = [".","!","?"]
