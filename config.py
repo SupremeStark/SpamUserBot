@@ -7,5 +7,5 @@ class Config:
     SESSION4 = ""
     SESSION5 = ""
     TOKEN = "5865910837:AAHoEV6Y_5UeUZ9GwS7EFFujIr3qVHZzr4g"
-    SUDO_USERS = [5505555398]
+    SUDO_USERS = [5992657564]
     PREFIXES = [".","!","?"]
