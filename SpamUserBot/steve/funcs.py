@@ -9,7 +9,7 @@ def custom_handler(cmd,func):
         UB2.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
         UB3.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
         UB4.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
-        UB5.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
+    #    UB5.add_handler(MessageHandler(func, filters.command(cmd,PREFIXES) & filters.user(SUDO_USERS)))
     except Exception as a:
         print(a)
 
